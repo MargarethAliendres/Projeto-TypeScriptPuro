@@ -1,0 +1,70 @@
+projeto node 
+
+$ npm init -y  cria o pacote package
+
+npm install typescript -D  somente 
+(aqui sem o -g pois vai ser local)
+(e -D somente ambiente de desenv, essa dependencia
+pois nao preceisa ba build)
+
+
+apos criar uma pasta src
+
+depois dentro da pasta acima criar um 
+index.ts
+
+para rodar tem que 
+
+npx tsc src/index.ts (pois converte para js, criara outro arquivo js))
+
+apos rode
+
+node src/index.js  (nome da pasta e do arquivo)
+
+toda vez que mudar o arquivo ts rode  npx tsc src/index.ts e depois node src/index.js
+
+
+
+toda vez ele vai diz da mesma funcao
+para resolver isso:
+
+npx tsc --init  (cria um arquivo de configuracao)
+
+procure essas propriedades ative e coloque essas pastas
+
+"rootDir": "./src",
+"outDir": "./build", 
+
+apos rode 
+
+npx tsc   (ele ja criara a pasta build automaticamente)
+
+agora rode somente o npx tsc que o arquivo ts conversa com o js nas pastas separadas)
+
+depois rodar o node build/index.js 
+
+
+mas para nao ficar rodando isso toda vez ( npx tsc)  (node build/index.js)
+
+ir na pasta package-json
+no arquivo "scripts" criar um arquivo 
+"start": "npx tsc && node build/index.js",
+
+agora só com esse comando abaixo roda tudo:
+
+npm run start
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+outro jeito só de desenvolvedor local em tempo de desenvolvimento, ele atualiza toda hora sem precisar dar comando  e nao gera a build é 
+desse jeito abaixo::
+
+npm install ts-node-dev -D
+
+depois ir no package-jason no "script"
+
+"start:dev":"ts-node-dev --respawn --transpile-only src/index.ts",
+
+
+
