@@ -1,3 +1,4 @@
+
 projeto node 
 
 $ npm init -y  cria o pacote package
@@ -62,7 +63,7 @@ desse jeito abaixo::
 
 npm install ts-node-dev -D
 
-depois ir no package-jason no "script"
+depois ir no package-json no "script"
 
 "start:dev":"ts-node-dev --respawn --transpile-only src/index.ts",
 
